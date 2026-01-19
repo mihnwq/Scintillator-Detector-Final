@@ -3,11 +3,8 @@ CMakeFiles/exampleB4a.dir/src/SteppingAction.cc.o: \
  /usr/include/stdc-predef.h \
  /home/mihnwq/SecondGeantProject/B4a/include/SteppingAction.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UserSteppingAction.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4OpticalPhoton.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ParticleDefinition.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PDefManager.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AutoLock.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Threading.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/globals.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ios.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Types.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GlobalConfig.hh \
  /usr/include/c++/13/complex \
@@ -184,8 +181,6 @@ CMakeFiles/exampleB4a.dir/src/SteppingAction.cc.o: \
  /usr/include/c++/13/bits/istream.tcc \
  /usr/include/c++/13/bits/sstream.tcc \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tls.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/globals.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ios.hh \
  /usr/include/c++/13/iostream /usr/include/c++/13/algorithm \
  /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
@@ -231,8 +226,14 @@ CMakeFiles/exampleB4a.dir/src/SteppingAction.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/bits/std_mutex.h \
- /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/chrono \
- /usr/include/c++/13/condition_variable \
+ /usr/include/c++/13/bits/unique_lock.h \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4OpticalPhoton.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ParticleDefinition.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PDefManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AutoLock.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Threading.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/globals.hh \
+ /usr/include/c++/13/chrono /usr/include/c++/13/condition_variable \
  /usr/include/c++/13/bits/shared_ptr.h \
  /usr/include/c++/13/bits/shared_ptr_base.h \
  /usr/include/c++/13/bits/allocated_ptr.h \
@@ -253,6 +254,11 @@ CMakeFiles/exampleB4a.dir/src/SteppingAction.cc.o: \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ParticleDefinition.icc \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/bits/enable_special_members.h \
  /home/mihnwq/SecondGeantProject/B4a/include/DetectorConstruction.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Ellipsoid.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GeomTypes.hh \
@@ -361,11 +367,8 @@ CMakeFiles/exampleB4a.dir/src/SteppingAction.cc.o: \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GenericMessenger.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AnyMethod.hh \
  /usr/include/c++/13/functional /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/unordered_map.h \
- /usr/include/c++/13/bits/hashtable.h \
- /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/bits/enable_special_members.h \
- /usr/include/c++/13/array /usr/include/c++/13/compare \
+ /usr/include/c++/13/bits/unordered_map.h /usr/include/c++/13/array \
+ /usr/include/c++/13/compare \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AnyType.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UIcommand.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ApplicationState.hh \
@@ -391,8 +394,8 @@ CMakeFiles/exampleB4a.dir/src/SteppingAction.cc.o: \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4BooleanSolid.icc \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4SubtractionSolid.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Threading.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/globals.hh \
  /home/mihnwq/SecondGeantProject/B4a/include/EventAction.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ThreeVector.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UserEventAction.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4RunManager.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Event.hh \
@@ -553,4 +556,6 @@ CMakeFiles/exampleB4a.dir/src/SteppingAction.cc.o: \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/rundefs.hh \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/list.tcc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Step.hh
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Step.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4MuonMinus.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4MuonPlus.hh

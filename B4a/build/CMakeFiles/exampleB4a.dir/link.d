@@ -76,7 +76,6 @@ exampleB4a: \
   /usr/lib/gcc/x86_64-linux-gnu/13/libgcc.a \
   /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o \
-  /home/mihnwq/Geant4/geant4-v11.3.2-install/lib/libG4graphics_reps.so \
   /home/mihnwq/Geant4/geant4-v11.3.2-install/lib/libG4digits_hits.so \
   /usr/lib/x86_64-linux-gnu/libX11.so.6 \
   /home/mihnwq/Geant4/geant4-v11.3.2-install/lib/libG4processes.so \
@@ -273,8 +272,6 @@ CMakeFiles/exampleB4a.dir/src/SteppingAction.cc.o:
 /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o:
-
-/home/mihnwq/Geant4/geant4-v11.3.2-install/lib/libG4graphics_reps.so:
 
 /home/mihnwq/Geant4/geant4-v11.3.2-install/lib/libG4digits_hits.so:
 

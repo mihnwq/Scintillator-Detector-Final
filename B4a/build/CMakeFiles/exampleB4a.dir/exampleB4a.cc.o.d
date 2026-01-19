@@ -1,15 +1,14 @@
 CMakeFiles/exampleB4a.dir/exampleB4a.cc.o: \
  /home/mihnwq/SecondGeantProject/B4a/exampleB4a.cc \
  /usr/include/stdc-predef.h \
- /home/mihnwq/SecondGeantProject/B4a/include/ActionInitialization.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VUserActionInitialization.hh \
- /home/mihnwq/SecondGeantProject/B4a/include/DetectorConstruction.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Ellipsoid.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GeomTypes.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GeomConfig.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VSolid.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AnalysisManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GenericAnalysisManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ToolsAnalysisManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VAnalysisManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AnalysisManagerState.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AnalysisVerbose.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/globals.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ios.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Types.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GlobalConfig.hh \
  /usr/include/c++/13/complex \
@@ -186,20 +185,17 @@ CMakeFiles/exampleB4a.dir/exampleB4a.cc.o: \
  /usr/include/c++/13/bits/istream.tcc \
  /usr/include/c++/13/bits/sstream.tcc \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tls.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4String.hh \
- /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/iostream /usr/include/c++/13/algorithm \
+ /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
- /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/cstring \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/c++/13/iostream \
+ /usr/include/c++/13/pstl/execution_defs.h \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4String.hh \
+ /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4String.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/geomdefs.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/globals.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ios.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/templates.hh \
  /usr/include/c++/13/climits \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
@@ -234,15 +230,111 @@ CMakeFiles/exampleB4a.dir/exampleB4a.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/bits/std_mutex.h \
- /usr/include/c++/13/bits/unique_lock.h \
+ /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/array \
+ /usr/include/c++/13/compare \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Threading.hh \
+ /usr/include/c++/13/chrono /usr/include/c++/13/condition_variable \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/bits/unique_ptr.h \
+ /usr/include/c++/13/ext/concurrence.h /usr/include/c++/13/future \
+ /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/13/bits/atomic_futex.h /usr/include/c++/13/atomic \
+ /usr/include/c++/13/bits/std_function.h \
+ /usr/include/c++/13/bits/std_thread.h /usr/include/c++/13/thread \
+ /usr/include/c++/13/bits/this_thread_sleep.h /usr/include/c++/13/vector \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AnalysisUtilities.hh \
+ /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/align.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/backward/auto_ptr.h \
+ /usr/include/c++/13/pstl/glue_memory_defs.h /usr/include/c++/13/fstream \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VTBaseHnManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4HnInformation.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4BinScheme.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Fcn.hh \
+ /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VAnalysisManager.icc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4HnManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4BaseAnalysisManager.hh \
+ /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4NtupleBookingManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/ntuple_booking \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/cids \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/cid \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/typedefs \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/forit \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4NtupleBookingManager.icc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VNtupleManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VFileManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4BaseFileManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VTHnFileManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4TH1ToolsManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4THnToolsManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4THnManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4THnManager.icc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AutoLock.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4THnMessenger.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UImessenger.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UIdirectory.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UIcommand.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ApplicationState.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ThreeVector.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Utility/defs.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
- /usr/include/c++/13/bits/stl_vector.h \
- /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/vector.tcc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UIparameter.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4THnToolsManager.icc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4THnMessenger.icc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Tokenizer.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4TH2ToolsManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4TH3ToolsManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4TP1ToolsManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4TP2ToolsManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/h1d \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/h1 \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/b1 \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/base_histo \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/histo_data \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/axes \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/axis \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/eqT \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/h2d \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/h2 \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/b2 \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/h3d \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/h3 \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/b3 \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/p1d \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/p1 \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/profile_data \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/p2d \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/tools/histo/p2 \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ToolsAnalysisManager.icc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GenericAnalysisManager.icc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GenericFileManager.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GenericFileManager.icc \
+ /home/mihnwq/SecondGeantProject/B4a/include/ActionInitialization.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VUserActionInitialization.hh \
+ /home/mihnwq/SecondGeantProject/B4a/include/DetectorConstruction.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Ellipsoid.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GeomTypes.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GeomConfig.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VSolid.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/geomdefs.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VSolid.icc \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Polyhedron.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/HepPolyhedron.h \
@@ -281,20 +373,6 @@ CMakeFiles/exampleB4a.dir/exampleB4a.cc.o: \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VCSGface.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GeomSplitter.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/geomwdefs.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AutoLock.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Threading.hh \
- /usr/include/c++/13/chrono /usr/include/c++/13/condition_variable \
- /usr/include/c++/13/bits/shared_ptr.h \
- /usr/include/c++/13/bits/shared_ptr_base.h \
- /usr/include/c++/13/bits/allocated_ptr.h \
- /usr/include/c++/13/bits/unique_ptr.h \
- /usr/include/c++/13/ext/concurrence.h /usr/include/c++/13/future \
- /usr/include/c++/13/bits/atomic_base.h \
- /usr/include/c++/13/bits/atomic_lockfree_defines.h \
- /usr/include/c++/13/bits/atomic_futex.h /usr/include/c++/13/atomic \
- /usr/include/c++/13/bits/std_function.h \
- /usr/include/c++/13/bits/std_thread.h /usr/include/c++/13/thread \
- /usr/include/c++/13/bits/this_thread_sleep.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PolyconeHistorical.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Polycone.icc \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VUserDetectorConstruction.hh \
@@ -302,12 +380,6 @@ CMakeFiles/exampleB4a.dir/exampleB4a.cc.o: \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4RotationMatrix.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VPhysicalVolume.icc \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4LogicalVolume.hh \
- /usr/include/c++/13/memory \
- /usr/include/c++/13/bits/stl_raw_storage_iter.h \
- /usr/include/c++/13/bits/align.h \
- /usr/include/c++/13/bits/shared_ptr_atomic.h \
- /usr/include/c++/13/backward/auto_ptr.h \
- /usr/include/c++/13/pstl/glue_memory_defs.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Region.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Region.icc \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VPhysicalVolume.hh \
@@ -334,10 +406,6 @@ CMakeFiles/exampleB4a.dir/exampleB4a.cc.o: \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4MaterialPropertyVector.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PhysicsFreeVector.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PhysicsVector.hh \
- /usr/include/c++/13/fstream \
- /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Log.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PhysicsVectorType.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PhysicsVector.icc \
@@ -359,13 +427,7 @@ CMakeFiles/exampleB4a.dir/exampleB4a.cc.o: \
  /usr/include/c++/13/bits/hashtable.h \
  /usr/include/c++/13/bits/hashtable_policy.h \
  /usr/include/c++/13/bits/enable_special_members.h \
- /usr/include/c++/13/array /usr/include/c++/13/compare \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AnyType.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UIcommand.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ApplicationState.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UIparameter.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UImessenger.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UIdirectory.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4OpticalSurface.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Physics2DVector.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Physics2DVector.icc \
@@ -421,8 +483,6 @@ CMakeFiles/exampleB4a.dir/exampleB4a.cc.o: \
  /usr/include/c++/13/bits/stl_queue.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4RunManager.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Event.hh \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/evtdefs.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Allocator.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AllocatorPool.hh \
@@ -580,7 +640,6 @@ CMakeFiles/exampleB4a.dir/exampleB4a.cc.o: \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/PTL/Config.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/PTL/JoinFunction.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/PTL/Macros.hh \
- /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/PTL/ScopeDestructor.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/PTL/Task.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/PTL/VTask.hh \

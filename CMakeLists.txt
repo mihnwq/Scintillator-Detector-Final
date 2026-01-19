@@ -27,9 +27,7 @@ set(SOURCES
         B4a/src/RunAction.cc
         B4a/src/SteppingAction.cc
         B4a/exampleB4a.cc
-        B4a/src/EventCounter.cc
-        B4a/src/TrackingAction.cc
-        B4a/src/PhotonMuonHelper.cc
+
 )
 
 # --- Define headers (optional, but good practice) ---
@@ -42,9 +40,7 @@ set(HEADERS
         B4a/include/HitAction.hh
         B4a/include/RunAction.hh
         B4a/include/SteppingAction.hh
-        B4a/include/EventCounter.hh
-        B4a/include/PhotonMuonHelper.hh
-        B4a/include/TrackingAction.hh
+
 )
 
 # --- Create the executable ---

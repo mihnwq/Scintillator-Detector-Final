@@ -1,0 +1,7 @@
+/home/mihnwq/SecondGeantProject/B4a/CMakeFiles/SecondGeantProject.dir
+/home/mihnwq/SecondGeantProject/B4a/CMakeFiles/edit_cache.dir
+/home/mihnwq/SecondGeantProject/B4a/CMakeFiles/rebuild_cache.dir
+/home/mihnwq/SecondGeantProject/B4a/CMakeFiles/list_install_components.dir
+/home/mihnwq/SecondGeantProject/B4a/CMakeFiles/install.dir
+/home/mihnwq/SecondGeantProject/B4a/CMakeFiles/install/local.dir
+/home/mihnwq/SecondGeantProject/B4a/CMakeFiles/install/strip.dir

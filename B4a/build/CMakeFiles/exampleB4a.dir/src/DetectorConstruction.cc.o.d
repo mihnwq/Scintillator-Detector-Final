@@ -384,71 +384,15 @@ CMakeFiles/exampleB4a.dir/src/DetectorConstruction.cc.o: \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4SubtractionSolid.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Threading.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/globals.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AutoDelete.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ThreadLocalSingleton.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Cache.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4CacheDetails.hh \
- /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
- /usr/include/c++/13/bits/list.tcc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Cons.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Cons.icc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Trd.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Trd.icc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4MaterialPropertiesTable.hh \
+ /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Colour.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4GlobalMagFieldMessenger.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Material.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PVReplica.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PhysicalConstants.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VisAttributes.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/graphics_reps_defs.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Colour.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Color.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VisAttributes.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4SDManager.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4HCtable.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4SDStructure.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VSensitiveDetector.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4CollectionNameVector.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4HCofThisEvent.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Allocator.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4AllocatorPool.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VHitsCollection.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Step.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4StepPoint.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4SteppingControl.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4StepStatus.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4TouchableHandle.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VTouchable.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4TouchableHistory.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4NavigationHistory.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4NavigationLevel.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4NavigationLevelRep.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4NavigationLevelRep.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4NavigationLevel.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4NavigationHistoryPool.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4NavigationHistory.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4LogicalVolume.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4TouchableHistory.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ReferenceCountedHandle.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4StepPoint.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4TrackVector.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Step.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Track.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/trkdefs.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4DynamicParticle.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ElectronOccupancy.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/pwdefs.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4LorentzVector.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ParticleDefinition.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PDefManager.hh \
- /usr/include/c++/13/stdlib.h \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ParticleDefinition.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ParticleMomentum.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4DynamicParticle.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4TrackStatus.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VUserTrackInformation.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4PhysicsModelCatalog.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Track.icc \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VHit.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VReadOutGeometry.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4SensitiveVolumeList.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VSDFilter.hh \
- /home/mihnwq/SecondGeantProject/B4a/include/DataVector.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UnitsTable.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UnitsTable.icc
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VisAttributes.icc

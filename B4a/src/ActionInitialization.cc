@@ -33,7 +33,7 @@
 #include "PrimaryGeneratorAction.hh"
 #include "RunAction.hh"
 #include "SteppingAction.hh"
-#include "TrackingAction.hh"
+
 
 using namespace B4;
 
@@ -48,22 +48,24 @@ ActionInitialization::ActionInitialization(DetectorConstruction* detConstruction
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void ActionInitialization::BuildForMaster() const
+  void ActionInitialization::Build() const
+{
+  SetUserAction(new RunAction);
+
+  auto eventAction = new EventAction;
+  SetUserAction(eventAction);   // ✅ REGISTER SAME INSTANCE
+
+  SetUserAction(new PrimaryGeneratorAction);
+  SetUserAction(new SteppingAction(fDetConstruction)); // ✅ NO POINTER PASSED
+}
+
+
+  void ActionInitialization::BuildForMaster() const
 {
   SetUserAction(new RunAction);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-void ActionInitialization::Build() const
-{
-  SetUserAction(new PrimaryGeneratorAction);
-  SetUserAction(new RunAction);
-  auto eventAction = new EventAction;
-  SetUserAction(new SteppingAction(fDetConstruction, eventAction));
-  SetUserAction(eventAction);
-  SetUserAction(new TrackingAction());
-}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 

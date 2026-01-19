@@ -27,7 +27,7 @@
 /// \file B4/B4a/src/EventAction.cc
 /// \brief Implementation of the B4a::EventAction class
 
-#include "EventAction.hh"
+/*#include "EventAction.hh"
 
 #include "G4AnalysisManager.hh"
 #include "G4Event.hh"
@@ -64,71 +64,43 @@ void EventAction::BeginOfEventAction(const G4Event* event)
 
 void EventAction::EndOfEventAction(const G4Event* event)
 {
-  // get analysis manager
+
   auto analysisManager = G4AnalysisManager::Instance();
 
-  // fill histograms
+
   analysisManager->FillH1(0, fEnergyAbs);
   analysisManager->FillH1(1, fEnergyGap);
   analysisManager->FillH1(2, fTrackLAbs);
   analysisManager->FillH1(3, fTrackLGap);
 
-  // fill ntuple
+
   analysisManager->FillNtupleDColumn(0,0, 500);
   analysisManager->FillNtupleDColumn(0,1, 800);
   analysisManager->FillNtupleDColumn(0,2, 500);
   analysisManager->FillNtupleDColumn(0,3, 500);
 
 
-  // Salvezi datele (presupunând că ai creat coloanele 4 și 5 în RunAction)
-
   G4int photonCount = EventCounter::GetCounter();
 
   EventCounter::AddPhotonCOunt(photonCount);
 
-  //G4double energyCount = EventCounter::GetEnergy();
-  //std::vector<G4ThreeVector> photonStartingPositions = EventCounter::GetPhotonStartingPositions();
 
- /* G4double photonCount = EventCounter::GetMaxPhotonCount();
-  G4double energyCount = EventCounter::GetMaxEnergy();
-  std::vector<G4ThreeVector> photonStartingPositions = EventCounter::GetPhotonStartingPositionsMax();*/
-
- // G4int maxPhotonsForMuon = EventCounter::GetMaxPhotonForMuon();
-  //G4ThreeVector maxMuonWithPhotonsPosition = EventCounter::GetGreediestMeuonPosition();
-
- // G4cout<<"Here we have the maxPhotons for muon: " << maxPhotonsForMuon << " With his initial position: "<< maxMuonWithPhotonsPosition << G4endl;
-
-
-  //G4cout<<"Photon count: "<<photonCount<<" have been detected "<< "with energy levels on: "<< energyCount<<G4endl;
-
-
- // analysisManager->FillNtupleDColumn(0,4, photonCount);
-
-
-  for (int i = 0; i < EventCounter::GetNumberOfEvents(); i++)
+  for (G4int i = 0; i < EventCounter::GetNumberOfEvents(); i++)
   {
     analysisManager->FillNtupleDColumn(0,4, EventCounter::GetCountAt(i));
     analysisManager->AddNtupleRow(0);
   }
 
-  G4cout<<"Are this many Photons this run:" << EventCounter::GetCounter()<<G4endl;
+//  G4cout<<"Are this many Photons this run:" << EventCounter::GetCounter()<<G4endl;
 
- /* analysisManager->FillNtupleDColumn(0,5, energyCount);
-
-  analysisManager->FillNtupleDColumn(0,6, maxPhotonsForMuon);
-  analysisManager->FillNtupleDColumn(0,7, maxMuonWithPhotonsPosition.x());
-  analysisManager->FillNtupleDColumn(0,8, maxMuonWithPhotonsPosition.y());
-  analysisManager->FillNtupleDColumn(0,9, maxMuonWithPhotonsPosition.z());*/
 
   analysisManager->AddNtupleRow(0);
  // AddVector(1, 2, 3, analysisManager, photonStartingPositions);
 
     auto eventID = event->GetEventID();
-   // auto eventID = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
 
-    G4cout<<"Well " << EventCounter::muonDataPerEvent.size()<<G4endl;
 
-    for (int i = 0; i < EventCounter::GetTotalMeuons(); i++)
+    for (G4int i = 0; i < EventCounter::GetTotalMeuons(); i++)
     {
 
         EventCounter::SetEventAt(eventID, i);
@@ -147,39 +119,71 @@ void EventAction::EndOfEventAction(const G4Event* event)
 
   auto printModulo = G4RunManager::GetRunManager()->GetPrintProgress();
   if ((printModulo > 0) && (eventID % printModulo == 0)) {
-    G4cout << "   Absorber: total energy: " << std::setw(7) << G4BestUnit(fEnergyAbs, "Energy")
-           << "       total track length: " << std::setw(7) << G4BestUnit(fTrackLAbs, "Length")
-           << G4endl << "        Gap: total energy: " << std::setw(7)
-           << G4BestUnit(fEnergyGap, "Energy") << "       total track length: " << std::setw(7)
-           << G4BestUnit(fTrackLGap, "Length") << G4endl;
 
-    G4cout << "--> End of event " << eventID << "\n" << G4endl;
   }
 
-  //  EventCounter::GetToNextEvent();
+
 }
 
-  /*void EventAction::AddVector(
-    G4int col_px,
-    G4int col_py,
-    G4int col_pz,
-    G4GenericAnalysisManager* analysisManager,
-     std::vector<G4ThreeVector> vector)
-{
-  auto eventID = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
 
-  for (int i = 0; i < vector.size(); i++)
-  {
-    analysisManager->FillNtupleIColumn(1, 0, eventID);     // event ID
-    analysisManager->FillNtupleDColumn(1, col_px, vector[i].x());
-    analysisManager->FillNtupleDColumn(1, col_py, vector[i].y());
-    analysisManager->FillNtupleDColumn(1, col_pz, vector[i].z());
-
-    analysisManager->AddNtupleRow(1);
-  }
-}
-*/
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.....
 
 }  // namespace B4a
+*/
+#include "EventAction.hh"
+
+#include "G4AnalysisManager.hh"
+#include "G4Event.hh"
+
+namespace B4a
+{
+
+  void EventAction::BeginOfEventAction(const G4Event*)
+  {
+    fEnergyAbs = 0.;
+    fEnergyGap = 0.;
+    fTrackLAbs = 0.;
+    fTrackLGap = 0.;
+
+    photonCounter = 0;
+    meuonData.clear();
+    meuonAlreadyHit.clear();
+  }
+
+  void EventAction::EndOfEventAction(const G4Event* event)
+  {
+    auto analysisManager = G4AnalysisManager::Instance();
+
+    // =========================
+    // NTUPLE 0 — ONE ROW / EVENT
+    // =========================
+    analysisManager->FillNtupleDColumn(0, 0, fEnergyAbs);
+    analysisManager->FillNtupleDColumn(0, 1, fEnergyGap);
+    analysisManager->FillNtupleDColumn(0, 2, fTrackLAbs);
+    analysisManager->FillNtupleDColumn(0, 3, fTrackLGap);
+    analysisManager->FillNtupleIColumn(0, 4, GetCounter());
+
+
+    G4cout<<"Number of photons this run: " << GetCounter() << G4endl;
+    analysisManager->AddNtupleRow(0);
+
+
+    G4int eventID = event->GetEventID();
+
+    for (G4int i = 0; i < GetNumberOfMeuons(); i++)
+    {
+      analysisManager->FillNtupleIColumn(1, 0, eventID);
+      analysisManager->FillNtupleDColumn(1, 1, GetMeuonAt(i).first.x());
+      analysisManager->FillNtupleDColumn(1, 2, GetMeuonAt(i).first.y());
+      analysisManager->FillNtupleDColumn(1, 3, GetMeuonAt(i).first.z());
+
+      analysisManager->AddNtupleRow(1);
+    }
+
+    G4cout << "End of event " << event->GetEventID() << G4endl;
+
+  }
+
+} // namespace B4a
+

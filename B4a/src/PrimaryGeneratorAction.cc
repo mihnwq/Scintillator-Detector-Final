@@ -49,9 +49,10 @@
 #include "G4Proton.hh"
 #include <cmath>
 #include<cstring>
+#include <G4MuonMinus.hh>
 #include<numbers>
 
-#include "EventCounter.hh"
+
 
 namespace B4
 {
@@ -64,7 +65,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
   CLHEP::HepRandom::setTheSeed(seed * G4UniformRand());
 
   G4int n_particle = 1;
-  EventCounter::SetMaxMuons(n_particle);
+
   fParticleGun = new G4ParticleGun(n_particle);
 
   // default particle kinematic
@@ -235,6 +236,119 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
     fParticleGun->SetParticlePosition(pos);
     fParticleGun->SetParticleMomentumDirection(mom);
 }
+
+
+
+ /*   void ParticleSourcePrinicpal(G4ParticleGun* gun)
+{
+    //--------------------------------------------------
+    // BAR GEOMETRY
+    //--------------------------------------------------
+    const G4double Ly = 0.5 * cm;
+    const G4double bar_halfLength = 50.0 * cm;
+
+    G4ThreeVector bar_start(0., Ly, -bar_halfLength);
+    G4ThreeVector bar_end  (0., Ly,  bar_halfLength);
+
+    // Random point along bar (guaranteed hit)
+    const G4double t = G4UniformRand();
+    G4ThreeVector target = bar_start + t * (bar_end - bar_start);
+
+
+    //--------------------------------------------------
+    // SKY SOURCE GEOMETRY (BIG ANGLES!)
+    //--------------------------------------------------
+    // A sphere above the detector:
+    const G4double Rsky = 10.0 * m;     // radius of sky sphere
+    const G4double skyYOffset = 8.0 * m; // raise the whole sphere upward
+
+    // random point on upper hemisphere
+    const G4double phi   = 2.0 * M_PI * G4UniformRand();
+    const G4double u     = G4UniformRand();                 // in [0,1]
+    const G4double costh = 1.0 - u;                         // restrict to downward hemisphere
+    const G4double theta = std::acos(costh);
+
+    // spherical → cartesian
+    G4double xs = Rsky * std::sin(theta) * std::cos(phi);
+    G4double ys = Rsky * std::sin(theta) * std::sin(phi);
+    G4double zs = Rsky * std::cos(theta);
+
+    // shift sphere upward by skyYOffset
+    ys += skyYOffset;
+
+    G4ThreeVector pos(xs, ys, zs);
+
+
+    //--------------------------------------------------
+    // MOMENTUM  — always aim at bar hit point
+    //--------------------------------------------------
+    G4ThreeVector dir = (target - pos).unit();
+
+
+    //--------------------------------------------------
+    // FIRE MUON
+    //--------------------------------------------------
+    gun->SetParticleDefinition(G4MuonMinus::Definition());
+    gun->SetParticleEnergy(3.0 * GeV);
+    gun->SetParticlePosition(pos);
+    gun->SetParticleMomentumDirection(dir);
+}*/
+
+  /*  void ParticleSourcePrinicpal(G4ParticleGun* gun)
+{
+    //--------------------------------------------------
+    // BAR GEOMETRY
+    //--------------------------------------------------
+    const G4double bar_halfLength = 50.0 * cm;
+
+    // bar vertical center
+    const G4double bar_center_y = 0.0 * cm;
+
+    // choose a random Z along the bar
+    const G4double z_hit =
+        -bar_halfLength + 2.0 * bar_halfLength * G4UniformRand();
+
+    // deep hit point: in the middle of the bar
+    G4ThreeVector target(0.0, bar_center_y, z_hit);
+
+
+    //--------------------------------------------------
+    // SKY SOURCE (uniform over hemisphere)
+    //--------------------------------------------------
+    const G4double Rsky = 10*m;       // radius of sky sphere
+    const G4double skyYOffset = 8*m;  // height offset upwards
+
+    // uniform hemisphere sampling
+    const G4double phi = 2*M_PI * G4UniformRand();
+    const G4double u   = G4UniformRand();
+    const G4double costh = u;               // uniform in [0,1]
+    const G4double sinth = std::sqrt(1-u*u);
+
+    // convert to cartesian position
+    G4double xs = Rsky * sinth * std::cos(phi);
+    G4double zs = Rsky * sinth * std::sin(phi);
+    G4double ys = Rsky * costh + skyYOffset;
+
+    G4ThreeVector pos(xs, ys, zs);
+
+
+    //--------------------------------------------------
+    // DIRECTION — aim directly at deep point
+    //--------------------------------------------------
+    G4ThreeVector dir = (target - pos).unit();
+
+
+    //--------------------------------------------------
+    // FIRE MUON
+    //--------------------------------------------------
+    gun->SetParticleDefinition(G4MuonMinus::Definition());
+    gun->SetParticleEnergy(3.0 * GeV);
+    gun->SetParticlePosition(pos);
+    gun->SetParticleMomentumDirection(dir);
+}
+*/
+
+
 
 
 

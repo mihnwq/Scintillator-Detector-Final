@@ -549,6 +549,4 @@ CMakeFiles/exampleB4a.dir/src/RunAction.cc.o: \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/list.tcc \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4SystemOfUnits.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UnitsTable.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UnitsTable.icc \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/globals.hh

@@ -4,7 +4,7 @@ CMakeFiles/exampleB4a.dir/src/ActionInitialization.cc.o: \
  /home/mihnwq/SecondGeantProject/B4a/include/ActionInitialization.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VUserActionInitialization.hh \
  /home/mihnwq/SecondGeantProject/B4a/include/EventAction.hh \
- /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UserEventAction.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ThreeVector.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/globals.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4ios.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4Types.hh \
@@ -229,6 +229,23 @@ CMakeFiles/exampleB4a.dir/src/ActionInitialization.cc.o: \
  /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/bits/std_mutex.h \
  /usr/include/c++/13/bits/unique_lock.h \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Utility/defs.h \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
+ /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h /usr/include/c++/13/vector \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4UserEventAction.hh \
+ /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/globals.hh \
  /home/mihnwq/SecondGeantProject/B4a/include/PrimaryGeneratorAction.hh \
  /home/mihnwq/Geant4/geant4-v11.3.2-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
  /home/mihnwq/SecondGeantProject/B4a/include/RunAction.hh \

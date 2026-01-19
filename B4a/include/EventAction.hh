@@ -28,9 +28,11 @@
 /// \brief Definition of the B4a::EventAction class
 
 #ifndef B4aEventAction_h
-#define B4aEventAction_h 1
+#define B4aEventAction_h
 
 #include <G4ThreeVector.hh>
+#include <unordered_map>
+#include <unordered_set>
 #include <vector>
 #include <CLHEP/Units/SystemOfUnits.h>
 
@@ -65,8 +67,19 @@ class EventAction : public G4UserEventAction
     void AddGap(G4double de, G4double dl);
     void AddVector(G4int , G4int, G4int, G4GenericAnalysisManager* , std::vector<G4ThreeVector> );
 
+   void AddPhoton();
+   void AddMeuon(G4ThreeVector);
+
+   G4int GetCounter();
+   G4int GetNumberOfMeuons();
+
+    std::pair<G4ThreeVector, G4int> GetMeuonAt(G4int);
+
 
   void AddEdep(G4double edep) { fEdep += edep; }
+
+  void InsertMeuonInMap(G4int);
+  G4bool VerifyMeuonHasHit(G4int);
 
   private:
     G4double fEnergyAbs = 0.;
@@ -74,6 +87,13 @@ class EventAction : public G4UserEventAction
     G4double fTrackLAbs = 0.;
     G4double fTrackLGap = 0.;
     G4double fEdep = 0.;
+
+   G4int photonCounter = 0;
+
+   std::vector<std::pair<G4ThreeVector , G4int>> meuonData;
+
+  std::unordered_set<G4int> meuonAlreadyHit;
+
 
 };
 
@@ -90,6 +110,38 @@ inline void EventAction::AddGap(G4double de, G4double dl)
   fEnergyGap += de;
   fTrackLGap += dl;
 }
+
+inline void EventAction::AddPhoton() {
+  photonCounter++;
+}
+
+  inline void EventAction::AddMeuon(G4ThreeVector v)
+  {
+   meuonData.push_back({v,0});
+  }
+
+  inline G4int EventAction::GetCounter() {
+  return photonCounter;
+}
+
+  inline std::pair<G4ThreeVector, G4int> EventAction::GetMeuonAt(G4int i)
+  {
+  return meuonData.at(i);
+ }
+
+  inline G4int EventAction::GetNumberOfMeuons() {
+  return meuonData.size();
+}
+
+  inline void EventAction::InsertMeuonInMap(G4int trackId) {
+    meuonAlreadyHit.insert(trackId);
+  }
+
+  inline G4bool EventAction::VerifyMeuonHasHit(G4int trackId) {
+  return meuonAlreadyHit.find(trackId) == meuonAlreadyHit.end();
+}
+
+
 
 }  // namespace B4a
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

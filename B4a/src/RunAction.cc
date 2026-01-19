@@ -27,7 +27,7 @@
 /// \file B4/B4a/src/RunAction.cc
 /// \brief Implementation of the B4::RunAction class
 
-#include "RunAction.hh"
+/*#include "RunAction.hh"
 
 #include "G4AnalysisManager.hh"
 #include "G4RunManager.hh"
@@ -87,7 +87,7 @@ RunAction::RunAction()
 
 
   // Ntuple 1 – Photon positions
-  analysisManager->CreateNtuple("ParticleData", "Photon positions");
+  analysisManager->CreateNtuple("ParticleData", "Muon positions");
 
   analysisManager->CreateNtupleIColumn("eventID");   // <-- IMPORTANT!!
   analysisManager->CreateNtupleDColumn("px");
@@ -126,25 +126,7 @@ void RunAction::EndOfRunAction(const G4Run* run)
   //
   auto analysisManager = G4AnalysisManager::Instance();
   if (analysisManager->GetH1(1)) {
-    G4cout << G4endl << " ----> print histograms statistic ";
-    if (isMaster) {
-      G4cout << "for the entire run " << G4endl << G4endl;
-    }
-    else {
-      G4cout << "for the local thread " << G4endl << G4endl;
-    }
 
-    G4cout << " EAbs : mean = " << G4BestUnit(analysisManager->GetH1(0)->mean(), "Energy")
-           << " rms = " << G4BestUnit(analysisManager->GetH1(0)->rms(), "Energy") << G4endl;
-
-    G4cout << " EGap : mean = " << G4BestUnit(analysisManager->GetH1(1)->mean(), "Energy")
-           << " rms = " << G4BestUnit(analysisManager->GetH1(1)->rms(), "Energy") << G4endl;
-
-    G4cout << " LAbs : mean = " << G4BestUnit(analysisManager->GetH1(2)->mean(), "Length")
-           << " rms = " << G4BestUnit(analysisManager->GetH1(2)->rms(), "Length") << G4endl;
-
-    G4cout << " LGap : mean = " << G4BestUnit(analysisManager->GetH1(3)->mean(), "Length")
-           << " rms = " << G4BestUnit(analysisManager->GetH1(3)->rms(), "Length") << G4endl;
   }
 
   // save histograms & ntuple
@@ -156,3 +138,79 @@ void RunAction::EndOfRunAction(const G4Run* run)
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 }  // namespace B4
+*/
+//
+/// \file B4/B4a/src/RunAction.cc
+/// \brief Implementation of the B4::RunAction class
+//
+
+#include "RunAction.hh"
+
+#include "G4AnalysisManager.hh"
+#include "G4RunManager.hh"
+#include "G4SystemOfUnits.hh"
+#include "globals.hh"
+
+namespace B4
+{
+
+// --------------------------------------------------------------------
+  RunAction::RunAction()
+  {
+    G4RunManager::GetRunManager()->SetPrintProgress(100);
+
+
+    auto analysisManager = G4AnalysisManager::Instance();
+    analysisManager->SetVerboseLevel(1);
+    analysisManager->SetNtupleMerging(true);
+
+    // HISTOGRAMS
+    analysisManager->CreateH1("Eabs", "Edep in absorber", 110, 0., 330 * MeV);
+    analysisManager->CreateH1("Egap", "Edep in gap", 100, 0., 30 * MeV);
+    analysisManager->CreateH1("Labs", "trackL in absorber", 100, 0., 50 * cm);
+    analysisManager->CreateH1("Lgap", "trackL in gap", 100, 0., 50 * cm);
+
+    // NTUPLE 0
+    analysisManager->CreateNtuple("GeneralData", "Event summary");
+    analysisManager->CreateNtupleDColumn("Eabs");
+    analysisManager->CreateNtupleDColumn("Egap");
+    analysisManager->CreateNtupleDColumn("Labs");
+    analysisManager->CreateNtupleDColumn("Lgap");
+    analysisManager->CreateNtupleIColumn("PhotonCount");
+    analysisManager->FinishNtuple(0);
+
+    // NTUPLE 1
+    analysisManager->CreateNtuple("ParticleData", "Muon positions");
+    analysisManager->CreateNtupleIColumn("eventID");
+    analysisManager->CreateNtupleDColumn("px");
+    analysisManager->CreateNtupleDColumn("py");
+    analysisManager->CreateNtupleDColumn("pz");
+    analysisManager->FinishNtuple(1);
+  }
+
+// --------------------------------------------------------------------
+void RunAction::BeginOfRunAction(const G4Run*)
+{
+  auto analysisManager = G4AnalysisManager::Instance();
+
+ // if (isMaster)
+  //{
+    analysisManager->OpenFile("B4.root");
+    G4cout << "Using " << analysisManager->GetType() << G4endl;
+  //}
+}
+
+// --------------------------------------------------------------------
+void RunAction::EndOfRunAction(const G4Run*)
+{
+  auto analysisManager = G4AnalysisManager::Instance();
+
+  //if (isMaster)
+ //   {
+    analysisManager->Write();
+    analysisManager->CloseFile();
+  //}
+
+}
+
+} // namespace B4
