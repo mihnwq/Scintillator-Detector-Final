@@ -106,19 +106,19 @@ namespace B4a {
       G4int trackID = step->GetTrack()->GetTrackID();
 
 
-      G4cout<<"Found meuon! "<<G4endl;
+    //  G4cout<<"Found meuon! "<<G4endl;
 
 
      // G4cout<<"Has meuon hit? "<<fEventAction->VerifyMeuonHasHit(trackID) << G4endl;
 
       if (fEventAction->VerifyMeuonHasHit(trackID))
       {
-        G4cout<<"Has meuon hit? "<<fEventAction->VerifyMeuonHasHit(trackID) << G4endl;
+      //  G4cout<<"Has meuon hit? "<<fEventAction->VerifyMeuonHasHit(trackID) << G4endl;
         fEventAction->InsertMeuonInMap(trackID);
         G4ThreeVector pos = step->GetPostStepPoint()->GetPosition(); ///This too
         fEventAction->AddMeuon(pos);
 
-        G4cout<<"possss " << pos << G4endl;
+        //G4cout<<"possss " << pos << G4endl;
       }
 
     }else if (step->GetTrack()->GetDefinition() == G4OpticalPhoton::OpticalPhotonDefinition())
@@ -143,6 +143,10 @@ namespace B4a {
 
 
           fEventAction->AddPhoton();
+
+          if (volume == "physCapDet1")
+            fEventAction->AddPhotonDet1();
+          else fEventAction->AddPhotonDet2();
 
 
           step->GetTrack()->SetTrackStatus(fStopAndKill);

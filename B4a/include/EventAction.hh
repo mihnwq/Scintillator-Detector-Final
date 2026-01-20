@@ -68,9 +68,13 @@ class EventAction : public G4UserEventAction
     void AddVector(G4int , G4int, G4int, G4GenericAnalysisManager* , std::vector<G4ThreeVector> );
 
    void AddPhoton();
+  void AddPhotonDet1();
+  void AddPhotonDet2();
    void AddMeuon(G4ThreeVector);
 
    G4int GetCounter();
+   G4int GetCounterDet1();
+   G4int GetCounterDet2();
    G4int GetNumberOfMeuons();
 
     std::pair<G4ThreeVector, G4int> GetMeuonAt(G4int);
@@ -89,6 +93,9 @@ class EventAction : public G4UserEventAction
     G4double fEdep = 0.;
 
    G4int photonCounter = 0;
+
+   G4int photonCounterDet1 = 0;
+   G4int photonCounterDet2 = 0;
 
    std::vector<std::pair<G4ThreeVector , G4int>> meuonData;
 
@@ -114,6 +121,23 @@ inline void EventAction::AddGap(G4double de, G4double dl)
 inline void EventAction::AddPhoton() {
   photonCounter++;
 }
+
+  inline void EventAction::AddPhotonDet1() {
+  photonCounterDet1++;
+}
+
+  inline void EventAction::AddPhotonDet2() {
+  photonCounterDet2++;
+}
+
+  inline G4int EventAction::GetCounterDet1() {
+    return photonCounterDet1;
+  }
+
+  inline G4int EventAction::GetCounterDet2() {
+  return photonCounterDet2;
+}
+
 
   inline void EventAction::AddMeuon(G4ThreeVector v)
   {

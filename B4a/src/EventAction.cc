@@ -147,6 +147,10 @@ namespace B4a
     fTrackLGap = 0.;
 
     photonCounter = 0;
+
+    photonCounterDet1 = 0;
+    photonCounterDet2 = 0;
+
     meuonData.clear();
     meuonAlreadyHit.clear();
   }
@@ -163,9 +167,14 @@ namespace B4a
     analysisManager->FillNtupleDColumn(0, 2, fTrackLAbs);
     analysisManager->FillNtupleDColumn(0, 3, fTrackLGap);
     analysisManager->FillNtupleIColumn(0, 4, GetCounter());
+    //G4cout << "Number of photons from det1 " << GetCounterDet1() << G4endl;
+    analysisManager->FillNtupleIColumn(0, 5, GetCounterDet1());
+    //G4cout << "Number of photons from det2 " << GetCounterDet2() << G4endl;
+    //G4cout << "NUmber of photons total " << GetCounter() << G4endl;
+    analysisManager->FillNtupleIColumn(0, 6, GetCounterDet2());
 
 
-    G4cout<<"Number of photons this run: " << GetCounter() << G4endl;
+   // G4cout<<"Number of photons this run: " << GetCounter() << G4endl;
     analysisManager->AddNtupleRow(0);
 
 
@@ -181,7 +190,7 @@ namespace B4a
       analysisManager->AddNtupleRow(1);
     }
 
-    G4cout << "End of event " << event->GetEventID() << G4endl;
+    //G4cout << "End of event " << event->GetEventID() << G4endl;
 
   }
 

@@ -100,7 +100,7 @@ void DetectorConstruction::DefineMaterials()
     polystyrene->AddElement(nist->FindOrBuildElement("H"), 8);
     polystyrene->AddElement(nist->FindOrBuildElement("C"), 8);
 
-    PMMA = new G4Material("PMMA", 1.29*g/cm3, 3);
+    PMMA = new G4Material("PMMA", /*1.29*/1.18*g/cm3, 3);
     PMMA->AddElement(nist->FindOrBuildElement("H"), 8);
     PMMA->AddElement(nist->FindOrBuildElement("C"), 5);
     PMMA->AddElement(nist->FindOrBuildElement("O"), 2);
@@ -368,7 +368,8 @@ void DetectorConstruction::DefineMaterials()
           , 2.6049452269064, 2.60760729376795, 2.61032028171817, 2.61308556317882, 2.61590455912367, 2.61877874122911, 2.62170963414005
           , 2.62469881785843, 2.62774793026215, 2.63085866976278, 2.63403279811124, 2.63727214336094, 2.64057860299901, 2.64395414725685
           , 2.64740082261195, 2.65092075549439, 2.65451615621185, 2.65818932310841, 2.66194264697383, 2.66577861572087, 2.66969981935005
-          , 2.67370895522285, 2.67780883366577, 2.68200238393016};
+          , 2.67370895522285, 2.67780883366577, 2.68200238393016
+        };
 
         G4double abslengthTiO2[101] =
 
