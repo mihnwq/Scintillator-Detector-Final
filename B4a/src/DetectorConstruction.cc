@@ -750,7 +750,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     Gx = 1.*mm;                  // groove halfwidth(OX)
     Gy = 1.*mm;                 // groove halfheight(OY)
 
-    G4double w = 0.5*mm;        // width of the paint layer
+    G4double w = 1*mm;        // width of the paint layer
 
     solidWorld = new G4Box("solidWorld", xWorld, yWorld, zWorld);
 
@@ -790,17 +790,17 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     physScin = new G4PVPlacement(0,G4ThreeVector(0.*cm,0.*cm,0.*m),logicScin,"physScin",logicWorld,false,0,true);
 
 
-    TiO2Box = new G4Box("TiO2Box", Lx+w, Ly+w, Lz+w);
+    TiO2Box = new G4Box("TiO2Box", Lx + w, Ly + w, Lz + w);
 
-    TiO2_groove = new G4Box("TiO2_groove", Gx/+0.1*mm, 0.1*mm+Gy+w/w/2, Lz+w+1*mm);
-    //TiO2_groove = new G4Box("TiO2_groove", Gx/+0.1*mm/, Gy/w/2/, Lz+w+1*mm); //am scos 0.1mm
+    //TiO2_groove = new G4Box("TiO2_groove", Gx/+0.1*mm, 0.1*mm+Gy+w/w/2, Lz+w+1*mm);
 
+        // TiO2_groove = new G4Box("TiO2_groove", Gx/+0.4*mm, Gy+0.7*mm, Lz+w+1*mm);
+
+        TiO2_groove = new G4Box("TiO2_groove", Gx/+0.4*mm, Gy+0.7*mm, Lz+w+1*mm);
 
     TiO2cover = new G4SubtractionSolid("TiO2cover", TiO2Box, Scin_FullBox, 0, G4ThreeVector(0.*cm,0.*cm,0.*m));
 
-    //TiO2Box_with_groove = new G4SubtractionSolid("TiO2Box_with_groove", TiO2cover, TiO2_groove, 0, G4ThreeVector(0.*cm,Ly-0.75*mm,0.*m)); //de ce e 0.75?
     TiO2Box_with_groove = new G4SubtractionSolid("TiO2Box_with_groove", TiO2cover, TiO2_groove, 0, G4ThreeVector(0.*cm,Ly-0.75*mm,0.*m));// am scos 0.75mm
-
 
     TiO2_logic = new G4LogicalVolume(TiO2Box_with_groove, TiO2, "TiO2_logic",0,0,0);
 
@@ -980,6 +980,11 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     G4VisAttributes attyellow(yellow);
     G4VisAttributes attorange(orange);
     G4VisAttributes attgrey(grey);
+
+    attred.SetVisibility(true);
+        attred.SetForceSolid(true);
+        TiO2_logic->SetVisAttributes(attred);
+
 
     G4VisAttributes *transp_white = new G4VisAttributes(G4Colour(1., 1., 1., 0.8));
     transp_white->SetForceSolid(true);

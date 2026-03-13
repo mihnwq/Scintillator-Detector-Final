@@ -174,7 +174,7 @@ namespace B4a
     analysisManager->FillNtupleIColumn(0, 6, GetCounterDet2());
 
 
-   // G4cout<<"Number of photons this run: " << GetCounter() << G4endl;
+    G4cout<<"Number of photons this run: " << GetCounter() << G4endl;
     analysisManager->AddNtupleRow(0);
 
 
