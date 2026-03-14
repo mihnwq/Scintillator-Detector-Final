@@ -132,22 +132,13 @@ namespace B4a {
       if (post->GetStepStatus() == fGeomBoundary)
       {
         G4String volume = postPV->GetName();
-        if (volume == "physCapDet1" || volume == "physCapDet2")
+
+        if (volume == "physCapDet1")
         {
-          G4double energy = step->GetTrack()->GetKineticEnergy();
           G4ThreeVector startingPosition = step->GetTrack()->GetVertexPosition();
           G4ThreeVector endingPosition = step->GetTrack()->GetPosition();
 
-          const G4Track* photon = step->GetTrack();
-          G4int parentID = photon->GetParentID();
-
-
           fEventAction->AddPhoton();
-
-          if (volume == "physCapDet1")
-            fEventAction->AddPhotonDet1();
-          else fEventAction->AddPhotonDet2();
-
 
           step->GetTrack()->SetTrackStatus(fStopAndKill);
         }

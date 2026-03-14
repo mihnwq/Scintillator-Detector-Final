@@ -10,9 +10,9 @@
 #include "G4MaterialPropertiesTable.hh" // NOU: Pentru proprietăți optice
 #include "G4OpticalSurface.hh"          // NOU: Pentru suprafețe optice (dacă e necesar)
 #include "G4LogicalBorderSurface.hh"
-#include <vector>       // <-- ADAUGĂ ASTA
-#include <algorithm>    // <-- ADAUGĂ ASTA
-#include <utility>      // <-- ADAUGĂ ASTA
+#include <vector>
+#include <algorithm>
+#include <utility>
 #include <G4Colour.hh>
 #include <G4VisAttributes.hh>
 
@@ -25,19 +25,19 @@ namespace B4
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
     void SortEnergiesAndValues(G4double* energies, G4double* values, int size)
     {
-        // 1. Creăm un vector de perechi (Energie, Valoare)
+
         std::vector<std::pair<G4double, G4double>> pairs;
         for (int i = 0; i < size; ++i) {
             pairs.push_back({energies[i], values[i]});
         }
 
-        // 2. Sortăm perechile. Implicit, se sortează după primul element (Energia)
+
         std::sort(pairs.begin(), pairs.end());
 
-        // 3. Punem valorile sortate înapoi în vectorii originali
+
         for (int i = 0; i < size; ++i) {
-            energies[i] = pairs[i].first;  // Energia sortată
-            values[i]   = pairs[i].second; // Valoarea care corespunde acelei energii
+            energies[i] = pairs[i].first;
+            values[i]   = pairs[i].second;
         }
     }
 
@@ -734,23 +734,44 @@ SortEnergiesAndValues(energyPLSTR_WLSfiber, rindexPLSTR_WLSfiber, 101);
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 G4VPhysicalVolume* DetectorConstruction::Construct()
 {
-  G4double R0, R1;
+  // G4double R0, R1;
+  //
+  //   R0 = 0.6875*mm;             // radius of the fiber core
+  //   R1 = 0.0625*mm;             // radius of the fiber cladding
+  //
+  //   G4double Lz, Ly, Lx;
+  //
+  //   Lz = 50*cm;                 // scintillator cell halflength(OZ)
+  //   Ly = 0.5*cm;                // scintillator cell halfheight(OY)
+  //   Lx = 1.25*cm;               // scintillator cell halfwidth(OX)
+  //
+  //   G4double Gx, Gy;
+  //
+  //   Gx = 1.*mm;                  // groove halfwidth(OX)
+  //   Gy = 1.*mm;                 // groove halfheight(OY)
+  //
+  //   G4double w = 1.*mm;        // width of the paint layer
 
-    R0 = 0.6875*mm;             // radius of the fiber core
-    R1 = 0.0625*mm;             // radius of the fiber cladding
+        G4double R0, R1;
 
-    G4double Lz, Ly, Lx;
+        R0 = 0.6*mm;            // fiber core radius
+        R1 = 0.06*mm;           // cladding thickness
 
-    Lz = 50*cm;                 // scintillator cell halflength(OZ)
-    Ly = 0.5*cm;                // scintillator cell halfheight(OY)
-    Lx = 1.25*cm;               // scintillator cell halfwidth(OX)
+        G4double Lz, Ly, Lx;
 
-    G4double Gx, Gy;
+        Lz = 50*cm;             // scintillator half length (Z)
+        Ly = 0.5*cm;            // scintillator half height (Y)
+        Lx = 1.25*cm;           // scintillator half width (X)
 
-    Gx = 1.*mm;                  // groove halfwidth(OX)
-    Gy = 1.*mm;                 // groove halfheight(OY)
+        G4double Gx, Gy;
 
-    G4double w = 1*mm;        // width of the paint layer
+        // Gx = 0.9*mm;            // groove half width
+        // Gy = 0.9*mm;            // groove half height
+
+        Gx = 0.9*mm;            // groove half width
+        Gy = 0.9*mm;            // groove half height
+
+        G4double w = 0.3*mm;    // TiO2 paint thickness
 
     solidWorld = new G4Box("solidWorld", xWorld, yWorld, zWorld);
 
@@ -764,6 +785,8 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
     solidCapDet = new G4Box("solidCapDet",3*mm, 3*mm, 0.1*mm);
 
+
+
     logicCore = new G4LogicalVolume(solidCore, WLS_Core, "logicCore",0,0,0); //here we use WLS_Core(polystyrene with WLS properties)
 
     logicCladding = new G4LogicalVolume(solidCladding, PMMA, "logicCladding",0,0,0);
@@ -774,10 +797,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
     physCladding = new G4PVPlacement(0,G4ThreeVector(0.,Ly-1.*mm,0.*m),logicCladding,"physCladding",logicWorld,false,0,true);
 
-
     physCapDet1 = new G4PVPlacement(0,G4ThreeVector(0.*cm,Ly-1.*mm,50.06*cm), logicCapDet,"physCapDet1", logicWorld, true, 0, true);//the z component of the Vector can be changed to specify the distance am
-    //am modificat de la 50.06 la 50
-    physCapDet2 = new G4PVPlacement(0,G4ThreeVector(0.*cm,Ly-1.*mm,-50.06*cm), logicCapDet,"physCapDet2", logicWorld, true, 1, true);//between the end of the optical fiber and the SiPM
 
     Scin_FullBox = new G4Box("Scin_FullBox", Lx , Ly , Lz);
 
@@ -790,23 +810,98 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     physScin = new G4PVPlacement(0,G4ThreeVector(0.*cm,0.*cm,0.*m),logicScin,"physScin",logicWorld,false,0,true);
 
 
-    TiO2Box = new G4Box("TiO2Box", Lx + w, Ly + w, Lz + w);
+     G4double offset = 0;
 
-    //TiO2_groove = new G4Box("TiO2_groove", Gx/+0.1*mm, 0.1*mm+Gy+w/w/2, Lz+w+1*mm);
+    offset*=mm;
 
-        // TiO2_groove = new G4Box("TiO2_groove", Gx/+0.4*mm, Gy+0.7*mm, Lz+w+1*mm);
+    TiO2Box = new G4Box("TiO2Box", Lx + w + offset, Ly + w + offset, Lz + w + offset);
 
-        TiO2_groove = new G4Box("TiO2_groove", Gx/+0.4*mm, Gy+0.7*mm, Lz+w+1*mm);
+      //  TiO2_groove = new G4Box("TiO2_groove",R0 + R1 + 0.15*mm,R0 + R1 + 0.15*mm,Lz + 1*mm);
 
-    TiO2cover = new G4SubtractionSolid("TiO2cover", TiO2Box, Scin_FullBox, 0, G4ThreeVector(0.*cm,0.*cm,0.*m));
+        //TiO2_groove = new G4Box("TiO2_groove",Lx-2,Ly-2,Lz-2);
 
-    TiO2Box_with_groove = new G4SubtractionSolid("TiO2Box_with_groove", TiO2cover, TiO2_groove, 0, G4ThreeVector(0.*cm,Ly-0.75*mm,0.*m));// am scos 0.75mm
+    TiO2cover = new G4SubtractionSolid("TiO2cover", TiO2Box, Scin_FullBox, 0, G4ThreeVector(0,0,0));
+
+
+  //  TiO2Box_with_groove = new G4SubtractionSolid("TiO2Box_with_groove", TiO2cover, TiO2_groove, 0, G4ThreeVector(0.*cm,Ly-0.75*mm,0.*m));// am scos 0.75mm
+
+
+        G4double fiber_Y_center = Ly - 1.0*mm;
+
+
+        G4double paint_hole_half_size = R0 + R1 + 0.1*mm;
+
+        TiO2_groove = new G4Box("TiO2_groove",
+                                paint_hole_half_size,
+                                paint_hole_half_size,
+                                Lz + 1.1*mm);
+
+
+        TiO2Box_with_groove = new G4SubtractionSolid("TiO2Box_with_groove",
+                                                      TiO2cover,
+                                                      TiO2_groove,
+                                                      0,
+                                                      G4ThreeVector(0.*cm, fiber_Y_center, 0.*m));
 
     TiO2_logic = new G4LogicalVolume(TiO2Box_with_groove, TiO2, "TiO2_logic",0,0,0);
 
     TiO2_phys = new G4PVPlacement(0,G4ThreeVector(0., 0., 0.), TiO2_logic, "TiO2_phys", logicWorld, false, 0, true);
 
 
+    //     G4double R0 = 0.6*mm;            // fiber core radius
+    // G4double R1 = 0.06*mm;           // cladding thickness
+    // G4double Lz = 50*cm;             // scintillator half length (Z)
+    // G4double Ly = 0.5*cm;            // scintillator half height (Y)
+    // G4double Lx = 1.25*cm;           // scintillator half width (X)
+    // G4double Gx = 0.9*mm;            // groove half width
+    // G4double Gy = 0.9*mm;            // groove half height
+    // G4double w = 0.3*mm;             // TiO2 paint thickness
+    //
+    // solidWorld = new G4Box("solidWorld", xWorld, yWorld, zWorld);
+    // logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");
+    // physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true);
+    //
+    // // 1. Componentele fibrei
+    // solidCore = new G4Tubs("solidCore", 0.*cm, R0, 50.05*cm, 0., 2*M_PI);
+    // solidCladding = new G4Tubs("solidCladding", R0, R0+R1, 50.05*cm, 0., 2*M_PI);
+    // logicCore = new G4LogicalVolume(solidCore, WLS_Core, "logicCore");
+    // logicCladding = new G4LogicalVolume(solidCladding, PMMA, "logicCladding");
+    //
+    // // 2. Scintilatorul și Gaura (Groove)
+    // Scin_FullBox = new G4Box("Scin_FullBox", Lx , Ly , Lz);
+    // scintilator_groove_box = new G4Box("scintilator_groove_box", Gx, Gy, Lz+1.*mm);
+    //
+    // // Scădem gaura din volumul de polistiren
+    // Scin_Box = new G4SubtractionSolid ("Scin_Box", Scin_FullBox, scintilator_groove_box, 0, G4ThreeVector(0, Ly-1*mm, 0));
+    // logicScin = new G4LogicalVolume(Scin_Box, polystyrene, "logicScin");
+    // physScin = new G4PVPlacement(0, G4ThreeVector(0.*cm, 0.*cm, 0.*m), logicScin, "physScin", logicWorld, false, 0, true);
+    //
+    // // 3. NOU: Volumul de Adeziv Optic (Glue) care umple gaura de aer
+    // // IMPORTANT: În clasa de materiale trebuie să folosești un material (ex. PMMA sau polistiren)
+    // // sau să definești un "OpticalGlue" cu indice de refracție ~1.5 pentru logicGlue.
+    // logicGlue = new G4LogicalVolume(scintilator_groove_box, PMMA, "logicGlue"); // Am folosit PMMA provizoriu pt cuplare optica buna
+    //
+    // // Plasăm adezivul în spațiul gol lăsat de gaura din scintilator (în raport cu World)
+    // physGlue = new G4PVPlacement(0, G4ThreeVector(0., Ly-1.*mm, 0.*m), logicGlue, "physGlue", logicWorld, false, 0, true);
+    //
+    // // 4. Plasăm Fibra ÎN INTERIORUL adezivului optic, nu în World
+    // // Deoarece sunt în interiorul lui logicGlue, poziția lor relativă este (0,0,0)
+    // physCore = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicCore, "physCore", logicGlue, false, 0, true);
+    // physCladding = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicCladding, "physCladding", logicGlue, false, 0, true);
+    //
+    // // 5. Detectorii (SiPM) plasați în World, la capetele fibrei
+    // solidCapDet = new G4Box("solidCapDet", 3*mm, 3*mm, 0.1*mm);
+    // logicCapDet = new G4LogicalVolume(solidCapDet, worldMat, "logicCapDet");
+    // physCapDet1 = new G4PVPlacement(0, G4ThreeVector(0.*cm, Ly-1.*mm, 50.06*cm), logicCapDet, "physCapDet1", logicWorld, true, 0, true);
+    //
+    // // 6. Învelișul TiO2
+    // G4double offset = 0;
+    // TiO2Box = new G4Box("TiO2Box", Lx + w + offset, Ly + w + offset, Lz + w + offset);
+    // TiO2_groove = new G4Box("TiO2_groove", R0 + R1 + 0.15*mm, R0 + R1 + 0.15*mm, Lz + 1*mm);
+    // TiO2cover = new G4SubtractionSolid("TiO2cover", TiO2Box, Scin_FullBox, 0, G4ThreeVector(0,0,0));
+    // TiO2Box_with_groove = new G4SubtractionSolid("TiO2Box_with_groove", TiO2cover, TiO2_groove, 0, G4ThreeVector(0.*cm, Ly-0.75*mm, 0.*m));
+    // TiO2_logic = new G4LogicalVolume(TiO2Box_with_groove, TiO2, "TiO2_logic");
+    // TiO2_phys = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), TiO2_logic, "TiO2_phys", logicWorld, false, 0, true);
 
     std::vector<G4double> energy =
 
@@ -960,7 +1055,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     fScoringVolume = logicScin;
 
 
-    G4Colour red(1., 0., 0.); // Define red color
+    G4Colour red(1., 0., 0., 0.5); // Define red color
     G4Colour green(0., 1., 0.); // Define green color
     G4Colour blue(0., 0., 1.); // Define blue color
     G4Colour violet(1., 0., 1.);
@@ -983,7 +1078,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
     attred.SetVisibility(true);
         attred.SetForceSolid(true);
-        TiO2_logic->SetVisAttributes(attred);
+
 
 
     G4VisAttributes *transp_white = new G4VisAttributes(G4Colour(1., 1., 1., 0.8));
@@ -1008,6 +1103,10 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     transp_yellow->SetForceSolid(true);
     transp_yellow->SetVisibility(true);
 
+      //  logicScin->SetVisAttributes(attred);
+        logicCapDet->SetVisAttributes(transp_green);
+        logicCore->SetVisAttributes(transp_magenta);
+        //TiO2_logic->SetVisAttributes(transp_white);
 
 
     auto simpleBoxVisAtt = new G4VisAttributes(G4Colour(1.0, 1.0, 1.0)); ///// white

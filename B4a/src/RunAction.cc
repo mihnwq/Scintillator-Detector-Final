@@ -178,7 +178,6 @@ namespace B4
     analysisManager->CreateNtupleDColumn("Lgap");
     analysisManager->CreateNtupleIColumn("PhotonCount");
     analysisManager->CreateNtupleIColumn("PhotonCountDet1");
-    analysisManager->CreateNtupleIColumn("PhotonCountDet2");
     analysisManager->FinishNtuple(0);
 
     // NTUPLE 1

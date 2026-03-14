@@ -19,5 +19,6 @@
 # 10000 events
 #
 /run/printProgress 1000
-/run/beamOn 1000
+/run/beamOn 150
+
 

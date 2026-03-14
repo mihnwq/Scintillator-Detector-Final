@@ -13,7 +13,7 @@ namespace B4a {
   class SteppingAction : public G4UserSteppingAction
   {
   public:
-    // ❌ REMOVE EventAction* FROM CONSTRUCTOR
+
     SteppingAction(const B4::DetectorConstruction* detConstruction);
     ~SteppingAction() override = default;
 
@@ -21,7 +21,7 @@ namespace B4a {
 
   private:
     const B4::DetectorConstruction* fDetConstruction = nullptr;
-    // ❌ REMOVE EventAction* MEMBER
+
   };
 
 }  // namespace B4a

@@ -104,11 +104,11 @@ private:
     G4Box  *Scin_FullBox, *scintilator_groove_box, *TiO2Box, *TiO2_groove;
 
     // Logical volumes
-    G4LogicalVolume *logicWorld, *logicRadiator, *logicDetector, *logicScintillator, *logicCapDet;
+    G4LogicalVolume *logicWorld, *logicRadiator, *logicDetector, *logicScintillator, *logicCapDet,*logicGlue;
     G4LogicalVolume *logicScin, *logicCore, *logicCladding, *TiO2_logic;
 
     // Physical volumes
-    G4VPhysicalVolume *physWorld, *physDetector, *physRadiator, *physScintillator, *physCapDet1, *physCapDet2;
+    G4VPhysicalVolume *physWorld, *physDetector, *physRadiator, *physScintillator, *physCapDet1, *physGlue;
     G4VPhysicalVolume *physScin, *physCore, *physCladding, *TiO2_phys;
 
     // Optical surfaces

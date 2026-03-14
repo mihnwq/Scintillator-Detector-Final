@@ -215,8 +215,6 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
 
     G4ThreeVector target(x_hit, y_hit, z_hit);
 
-
-
     const G4double PLANE = 300*cm;    // 3m × 3m sky plane
     const G4double HEIGHT = 300*cm;   // 3m above detector
 

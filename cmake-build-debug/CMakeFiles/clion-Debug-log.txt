@@ -1,4 +1,4 @@
-/snap/clion/411/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/411/bin/ninja/linux/x64/ninja -DGeant4_DIR=/home/mihnwq/Geant4/geant4-v11.3.2-install/lib/cmake/Geant4 -G Ninja -S /home/mihnwq/SecondGeantProject -B /home/mihnwq/SecondGeantProject/cmake-build-debug
+/snap/clion/425/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/425/bin/ninja/linux/x64/ninja -DGeant4_DIR=/home/mihnwq/Geant4/geant4-v11.3.2-install/lib/cmake/Geant4 -G Ninja -S /home/mihnwq/SecondGeantProject -B /home/mihnwq/SecondGeantProject/cmake-build-debug
 -- The C compiler identification is GNU 13.3.0
 -- The CXX compiler identification is GNU 13.3.0
 -- Detecting C compiler ABI info
